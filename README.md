@@ -1,5 +1,11 @@
 # FPGA Snake Game (Verilog HDL)
 
+![HDL](https://img.shields.io/badge/HDL-Verilog-1f6feb)
+![FPGA](https://img.shields.io/badge/FPGA-Intel%20MAX%2010%20(10M50DAF484C7G)-0071C5?logo=intel&logoColor=white)
+![Board](https://img.shields.io/badge/board-Terasic%20DE10--Lite-555)
+![Toolchain](https://img.shields.io/badge/toolchain-Quartus%20Prime%2018.1-555)
+![License](https://img.shields.io/badge/license-MIT-2ea44f)
+
 A snake game on the Terasic DE10-Lite, written entirely in Verilog HDL.
 
 <img src="docs/images/de10-lite.jpg" alt="Terasic DE10-Lite FPGA board (Intel MAX 10), top view" width="720">
