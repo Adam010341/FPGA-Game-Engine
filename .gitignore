@@ -1,0 +1,18 @@
+# Quartus Prime build artifacts (regenerate with a full compile)
+db/
+incremental_db/
+output_files/
+simulation/
+greybox_tmp/
+*.qws
+*.bak
+*.rpt
+*.summary
+*.smsg
+*.done
+*.sof
+*.pof
+*.jdi
+*.sld
+*.qarlog
+.qsys_edit/
