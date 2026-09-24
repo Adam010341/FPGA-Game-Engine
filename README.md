@@ -2,6 +2,10 @@
 
 A snake game on the Terasic DE10-Lite, written entirely in Verilog HDL.
 
+<img src="docs/images/de10-lite.jpg" alt="Terasic DE10-Lite FPGA board (Intel MAX 10), top view" width="720">
+
+<sub>Target board: Terasic DE10-Lite. Representative photo, not this project's setup (the yellow labels are the photographer's). Photo: [“DE10-Lite-20240112_160112”](https://www.flickr.com/photos/fotoopa_hs/53459607598) by Frans ([fotoopa](https://www.flickr.com/photos/fotoopa_hs)), licensed under [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/); resized.</sub>
+
 ## Project Overview
 
 This project is a hardware-level implementation of the classic **Snake Game** developed for the **Terasic DE10-Lite (MAX10 FPGA)** platform. The system is built entirely using **Verilog HDL**, demonstrating hardware-software co-design principles, digital logic optimization, and real-time peripheral interfacing.
