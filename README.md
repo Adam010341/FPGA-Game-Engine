@@ -1,6 +1,6 @@
-# FPGA-Based-Hardware-Game-Design-Snake-Verilog-HDL-
-A snake game on DE10-Lite
 # FPGA Snake Game (Verilog HDL)
+
+A snake game on the Terasic DE10-Lite, written entirely in Verilog HDL.
 
 ## Project Overview
 
@@ -87,16 +87,35 @@ This project is intended for:
 ## Code Structure
 
 ```
-Snake_Game/
-│
-├── Snake_Game_Top.v      // Top-level module & signal routing
-├── Clock_Divider.v       // Clock generation & Dynamic Frequency Scaling
-├── Keypad_Scanner.v      // Matrix keypad scanning logic
-├── Game_Engine.v         // FSM, Snake logic, LFSR, and collision
-├── Dot_Matrix_Driver.v   // Visual rendering for 16x8 matrix
-└── Seven_Seg_Controller.v // BCD conversion for Score and Time
-
+FPGA-Game-Engine/
+├── Snake_Game_Top.v      // All RTL, one module per concern (see below)
+├── Snake_Game_Top.qpf    // Quartus project
+├── Snake_Game_Top.qsf    // Device, source and pin assignments
+└── de10_lite_pins.tcl    // DE10-Lite pin map as a standalone, commented script
 ```
+
+Modules in `Snake_Game_Top.v`:
+
+| Module | Role |
+| --- | --- |
+| `Snake_Game_Top` | Top-level module & signal routing |
+| `Clock_Divider` | Clock generation & dynamic frequency scaling |
+| `Keypad_Scanner` | Matrix keypad scanning logic |
+| `Game_Engine` | FSM, snake logic, LFSR, and collision |
+| `Dot_Matrix_Driver` | Visual rendering for the 16x8 matrix |
+| `Seven_Seg_Controller` | BCD conversion for score and time |
+
+---
+
+## Build
+
+Target device: **MAX 10 `10M50DAF484C7G`** (DE10-Lite), built with **Quartus Prime 18.1 Lite Edition**.
+
+1. Open `Snake_Game_Top.qpf` in Quartus.
+2. Run **Processing → Start Compilation**. Pin assignments are already in the `.qsf`; `de10_lite_pins.tcl` holds the same map if you need to re-apply it.
+3. Program the board with `output_files/Snake_Game_Top.sof` via **Tools → Programmer** (USB-Blaster).
+
+Build outputs (`db/`, `incremental_db/`, `output_files/`) are not tracked; a full compile regenerates them.
 
 ---
 
@@ -111,4 +130,8 @@ This project demonstrates a **complete hardware system** built with **Verilog HD
 
 It serves as a comprehensive reference for low-level digital system integration on MAX10 FPGAs.
 
-Would you like me to generate a **Pin Mapping table** specifically for the DE10-Lite to help with your project documentation?
+---
+
+## License
+
+[MIT](LICENSE) © 2026 Adam Fan
